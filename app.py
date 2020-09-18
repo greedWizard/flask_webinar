@@ -1,4 +1,9 @@
 from flask import Flask, request
+import logging
+
+
+logging.basicConfig(filename='main_app.log')
+# logger = logging.getLogger('main_app')
 
 
 app = Flask(__name__)
@@ -15,6 +20,7 @@ def divide():
     # except ZeroDivisionError as e:
     #     return 'B can not be 0'
     except Exception as e:
+        # logger.error(e)
         print(e)
 
     return str(c)
